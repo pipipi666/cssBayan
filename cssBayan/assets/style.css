@@ -5,6 +5,7 @@ body {
 .container {
   margin: auto;
   width: min(50rem, 90vw);
+  font-size: 0.8rem;
 }
 
 .ul {
@@ -26,11 +27,12 @@ body {
 }
 
 .img {
-  display: none;
+  display: flex;
   margin: auto;
-  width: min(100vw, 20rem);
+  width: min(90vw, 20rem);
   transition: all 1s ease;
-  padding-bottom: 5%;
+  transform: scale(0);
+  height: 0;
 }
 
 .li {
@@ -42,7 +44,7 @@ h1 {
 }
 
 h2 {
-  color: #82449b;
+  color: #000;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
@@ -53,6 +55,9 @@ h2 {
 
 .input:checked ~ .row .img {
   display: flex;
+  transform: scale(1);
+  height: fit-content;
+  padding-bottom: 5%;
 }
 
 .input:checked ~ .row .icon {
@@ -69,6 +74,14 @@ h2 {
 
 @media (hover: hover) {
   /* when hover is supported */
+  .icon {
+    display: none;
+  }
+
+  h2 {
+    color: #82449b;
+  }
+
   .container:hover {
     cursor: pointer;
   }
@@ -87,5 +100,20 @@ h2 {
 
   .li:hover .img {
     display: flex;
+    transform: scale(1);
+    height: fit-content;
+    padding-bottom: 5%;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    font-size: 1.2rem;
   }
 }
